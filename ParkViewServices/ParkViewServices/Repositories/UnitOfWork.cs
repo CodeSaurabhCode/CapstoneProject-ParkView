@@ -8,13 +8,14 @@ namespace ParkViewServices.Repositories
         private readonly ApplicationDbContext _db;
         public IHotelRepository Hotel { get; private set; }
         public IRoomRepository Room { get; private set; }
-
+        public ICityRepository City { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         {
             _db = db;
             Hotel = new HotelRepository(_db);
             Room = new RoomRepository(_db);
+            //City = new CityR(_db);
         }
 
         public void Save()

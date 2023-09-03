@@ -4,6 +4,8 @@
     {
         IHotelRepository Hotel { get; }
         IRoomRepository Room { get; }
+        ICityRepository City { get; }
+
 
         void Save();
     }

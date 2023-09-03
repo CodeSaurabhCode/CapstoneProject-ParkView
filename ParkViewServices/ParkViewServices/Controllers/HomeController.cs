@@ -15,14 +15,15 @@ namespace ParkViewServices.Controllers
         }
 
         public IActionResult Index()
-        {
-            var hotels = _unitOfWork.Hotel.GetAll();
+        { 
+            var hotels = _unitOfWork.Hotel.GetAll(includeProperties : "City");
             return View(hotels);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(int id)
         {
-            return View();
+            var hotel = _unitOfWork.Hotel.Get(u => u.Id == id, includeProperties: "City");
+            return View(hotel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
