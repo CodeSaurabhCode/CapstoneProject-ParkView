@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+.navigation{
+  padding-top:30px;
+  padding-bottom:30px;
+  position:absolute;
+  top:0;
+  width:100%;
+  z-index:1;
+}
+
+.navbar-right{
+  float:right;
+  padding-right:10%;
+}
+
+.navbar-right a{
+  text-decoration:none;
+  padding:10px;
+  color: #fff;
+  font-family:Arial;
+  font-weight:900;
+}
+
+.navbar-right a:hover{
+  text-decoration:underline;
+}
+.navbar-logo{
+  padding-left:10%;
+  font-family:Arial;
+  font-size:30px;
+  font-weight:bold;
+  text-decoration:none;
+  color:#fff; 
+}
+    .video-background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  max-width: auto;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: -2;
+}
+
+/* Section styles */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    top:0;
+    bottom: 0;
+    right:0;
+    left:0;
+    background: rgba(0,0,0,.5);
+    z-index:-1;
+  }
+}
+
+h1 {
+ font-size: 3.7em;
+ margin: 0 0 0.3em;
+}
+
+p {
+  font-size: 1.3em;
+  margin: 0 0 1.6em;
+}
+
+button {
+  padding: 15px 36px;
+  border: 2px solid white;
+  background: transparent;
+  font-size: 1.05em;
+  color: inherit;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.3);
+}
+    </style>
+</head>
+
+<body>
+    <section>
+        <nav class="navigation">
+            <a href="#" class="navbar-logo">Logo</a>
+            <div class="navbar-right">
+              <a href="#">About</a>
+              <a href="#">Blog</a>
+              <a href="#">Contact</a>
+            </div>
+          </nav>
+        <h1>Hello World! 👋</h1>
+        <p>A full size background video section with pure CSS.</p>
+        <button>Get it now</button>
+        <video class="video-background" poster="https://images.unsplash.com/photo-1587587448844-c1036562fec1?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYyNzg5Mjk2MA&ixlib=rb-1.2.1&q=85" autoplay muted loop>
+          <source src="mainpage.mp4" type="video/mp4">
+        </video>
+      </section>
+      
+</body>
+</html>
