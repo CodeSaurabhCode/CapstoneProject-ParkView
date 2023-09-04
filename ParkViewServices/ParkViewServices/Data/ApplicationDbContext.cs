@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ParkViewServices.Models;
 using ParkViewServices.Models.Bookings;
 using ParkViewServices.Models.Hotels;
 using ParkViewServices.Models.Rooms;
@@ -20,6 +21,7 @@ namespace ParkViewServices.Data
 
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<BookingRoom> BookingRooms { get; set; }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
