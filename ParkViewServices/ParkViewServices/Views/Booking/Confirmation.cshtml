@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ReviewBookingViewModel
+<div class="container">
+    <div class="row">
+        <!-- Left Half -->
+        <div class="col-md-9">
+            <h2>Review Your Booking</h2>
+            <div class="hr"></div>
+            <div class="card mb-3" style="max-width: 900px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model.Hotel.Name</h5>
+                            <p class="card-text"><small class="text-body-secondary">@Model.Hotel.Address</small></p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col ml-2">
+                                            <div class="card" style="height:120px; width:100px ; text-align:center">
+                                                <div class="card-body">
+                                                    <p class="text" style="font-size:12px; margin-bottom:5px">Check-In</p>
+                                                    <h6 class="display-6" style="text-align:center">@Model.Booking.CheckInDate.Day</h6>
+                                                    <p class="text" style="font-size:12px">@Model.Booking.CheckInDate.ToString("MMM") 23</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col" style="margin-left:10px">
+                                            <div class="card" style="height:120px; width:100px; text-align:center">
+                                                <div class="card-body">
+                                                    <p class="text" style="font-size:12px; margin-bottom:5px" >Check-Out</p>
+                                                    <h6 class="display-6" style="text-align:center">@Model.Booking.CheckOutDate.Day</h6>
+                                                    <p class="text" style="font-size:12px">@Model.Booking.CheckOutDate.ToString("MMM") 23</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Right Half -->
+        <div class="col-md-3">
+            <h2>Price Summary</h2>
+            <div class="hr"></div>
+
+            <p>Total Price (Without GST) : @Model.Booking.TotalAmount </p>
+            <a asp-action="initiatebooking" class="btn btn-primary">pay</a>
+        </div>
+    </div>
+</div>

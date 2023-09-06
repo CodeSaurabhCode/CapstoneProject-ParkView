@@ -2,6 +2,7 @@
 using ParkViewServices.Models.Bookings;
 using ParkViewServices.Models.Rooms;
 using ParkViewServices.Repositories.Interfaces;
+using Razorpay.Api;
 
 namespace ParkViewServices.Controllers
 {
@@ -34,22 +35,36 @@ namespace ParkViewServices.Controllers
             if (selectedRoom != null)
             {
                 _bookingCart.AddToCart(selectedRoom);
+                selectedRoom.Status = true;
+                var roomcount = _unitOfWork.RoomCount.Get(u => u.RoomTypeID == selectedRoom.RoomTypeId && u.HotelID == HotelId);
+                roomcount.Occupied += 1;
+                _unitOfWork.Room.Update(selectedRoom);
+                _unitOfWork.RoomCount.Update(roomcount);
+                _unitOfWork.Save();
             }
             //return RedirectToAction("Index");
             return RedirectToAction("SelectRooms", "Booking", new {HotelId = HotelId});
 
         }
 
-        public IActionResult RemoveFromCart(int RoomTypeId, int HotelId)
+        public IActionResult RemoveFromCart(int RoomId, int HotelId)
         {
-            var selectedRoom = _unitOfWork.Room.GetAll(u => u.HotelId == HotelId && u.RoomTypeId == RoomTypeId && u.Status == false, includeProperties: "RoomType").FirstOrDefault();
+            var selectedRoom = _unitOfWork.Room.GetAll(u => u.HotelId == HotelId && u.Id == RoomId, includeProperties: "RoomType").FirstOrDefault();
             if (selectedRoom != null)
             {
                 _bookingCart.RemoveItemFromCart(selectedRoom.Id);
+                selectedRoom.Status = false;
+                var roomcount = _unitOfWork.RoomCount.Get(u => u.RoomTypeID == selectedRoom.RoomTypeId && u.HotelID == HotelId);
+                roomcount.Occupied -= 1;
+                _unitOfWork.Room.Update(selectedRoom);
+                _unitOfWork.RoomCount.Update(roomcount);
+                _unitOfWork.Save();
             }
             //return RedirectToAction("Index");
             return RedirectToAction("SelectRooms", "Booking", new { HotelId = HotelId });
 
         }
+
+        
     }
 }

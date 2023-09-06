@@ -37,7 +37,7 @@ namespace ParkViewServices.Models.Bookings
         [Range(0.01, double.MaxValue, ErrorMessage = "Total amount must be greater than 0.")]
         public decimal TotalAmount { get; set; }
             
-        public string? PaymentStatus { get; set; }
+        public bool? PaymentStatus { get; set; }
         public string? TransactionId { get; set; }
 
         public bool? IsConfirmed { get; set; }

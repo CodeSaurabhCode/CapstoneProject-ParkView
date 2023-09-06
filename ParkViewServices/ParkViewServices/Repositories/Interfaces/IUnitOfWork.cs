@@ -11,7 +11,7 @@
         IRoomTypesRepository RoomTypes { get; }
         IBookingRepository Booking { get; }
         //IBookingCartRoom BookingCartRoom { get; }
-
+        IApplicationUserRepository ApplicationUser { get; }
 
         void Save();
     }

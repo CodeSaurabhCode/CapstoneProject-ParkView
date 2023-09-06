@@ -10,12 +10,7 @@
     {
         [Required(ErrorMessage = "Please select a hotel.")]
         [Display(Name = "Select Hotel")]
-        public int HotelId { get; set; }
-
-        [Required(ErrorMessage = "Please enter your email address.")]
-        [EmailAddress(ErrorMessage = "Invalid email address.")]
-        [Display(Name = "Email Address")]
-        public string UserEmail { get; set; }
+        public int HotelId { get; set; } = 1;
 
         [Required(ErrorMessage = "Please select the check-in date.")]
         [DataType(DataType.Date)]
@@ -29,11 +24,15 @@
 
         [Range(1, int.MaxValue, ErrorMessage = "Please select the number of rooms.")]
         [Display(Name = "Number of Rooms")]
-        public int NumberOfRooms { get; set; }
+        public int NumberOfRooms { get; set; } = 2;
 
         [Range(1, int.MaxValue, ErrorMessage = "Please select the number of guests.")]
         [Display(Name = "Number of Guests")]
-        public int NumberOfGuests { get; set; }
+        public int NumberOfGuests { get; set; } = 2;
+
+        [Range(0, int.MaxValue, ErrorMessage = "Please select the number of guests.")]
+        [Display(Name = "Number of Children")]
+        public int NumberOfChildren7to12 { get; set; } = 2;
 
         [BindNever]
         public SelectList Hotels { get; set; }

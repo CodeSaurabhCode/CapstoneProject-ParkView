@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0mW87LABpUQj5Oxsj61vAaO9j/r0H1Yay9MJtxQb9Ucsp4f9txQIYTWyT0OQ7iqh3oCJCv9kcX5n4vK1nsk/7w==",
+  "dgSpecHash": "0DyeSNTGLgE/XcS8i0/849on3aJqligbew0YWcCHAltS2SD0ywTIXp8R1ThBFEGUFrf+r8L80cKlI3Lh0sNKng==",
   "success": true,
   "projectFilePath": "D:\\Capstone Project\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj",
   "expectedPackageFiles": [
@@ -140,6 +140,7 @@
     "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\nuget.projectmodel\\6.6.1\\nuget.projectmodel.6.6.1.nupkg.sha512",
     "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\nuget.protocol\\6.6.1\\nuget.protocol.6.6.1.nupkg.sha512",
     "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\nuget.versioning\\6.6.1\\nuget.versioning.6.6.1.nupkg.sha512",
+    "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\razorpay\\3.0.2\\razorpay.3.0.2.nupkg.sha512",
     "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
@@ -246,6 +247,16 @@
       "warningLevel": 1,
       "message": "jQuery.UI.Combined 1.13.2 depends on jQuery (>= 1.13.1) but jQuery 1.13.1 was not found. An approximate best match of jQuery 2.0.0 was resolved.",
       "libraryId": "jQuery",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Razorpay 3.0.2' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Razorpay",
       "targetGraphs": [
         "net6.0"
       ]

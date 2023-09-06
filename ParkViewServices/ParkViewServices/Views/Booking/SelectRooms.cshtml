@@ -43,12 +43,15 @@
                   <div class="card-body">
                     <h5 class="card-title">1x @item.RoomType.RoomTypeName</h5>
                     <p class="card-text">@item.RoomType.Price</p>
-                    <a asp-controller="BookingCart" asp-action="RemoveFromCart" asp-route-RoomTypeId="@item.RoomTypeId" asp-route-HotelId="@item.HotelId" class="btn btn-primary">Remove</a>
+                    <a asp-controller="BookingCart" asp-action="RemoveFromCart" asp-route-RoomId="@item.Id" asp-route-HotelId="@item.HotelId" class="btn btn-primary">Remove</a>
                   </div>
                 </div>
             }
            }
-            <div class="btn btn-primary center @if(Model.booking.NumberOfRooms != Model.bookedRooms.Count()) {<text>disabled</text>}">Review & Pay</div>
+            <a asp-controller="Booking" asp-action="Confirmation" 
+            class="btn btn-primary center @if(Model.booking.NumberOfRooms != Model.bookedRooms.Count()) {
+            <text>disabled</text>
+}">Review & Pay</a>
         </div>
     </div>
 </div>
