@@ -18,10 +18,13 @@ namespace ParkViewServices.Data
         public DbSet<RoomCount> RoomCount { get; set; }
         public DbSet<RoomImages> RoomImages { get; set; }
         public DbSet<HotelImages> HotelImages { get; set; }
+        public DbSet<BookedList> BookedList { get; set; }
 
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<BookingRoom> BookingRooms { get; set; }
+        //public DbSet<BookingRoom> BookingRooms { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        public DbSet<BookingCartRoom> BookingCartRooms { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -267,13 +270,13 @@ namespace ParkViewServices.Data
             
         );
 
-        modelBuilder.Entity<BookingRoom>()
-            .HasKey(br => new { br.BookingId, br.RoomId });
+        //modelBuilder.Entity<BookingRoom>()
+        //    .HasKey(br => new { br.BookingId, br.RoomId });
 
-        modelBuilder.Entity<BookingRoom>()
-            .HasOne(br => br.Booking)
-            .WithMany(b => b.BookingRooms)
-            .HasForeignKey(br => br.BookingId);
+        //modelBuilder.Entity<BookingRoom>()
+        //    .HasOne(br => br.Booking)
+        //    .WithMany(b => b.BookingRooms)
+        //    .HasForeignKey(br => br.BookingId);
 
         //modelBuilder.Entity<BookingRoom>()
         //    .HasOne(br => br.Room)

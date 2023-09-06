@@ -1,6 +1,10 @@
-﻿namespace ParkViewServices.Repositories.Interfaces
+﻿using ParkViewServices.Models.Bookings;
+
+namespace ParkViewServices.Repositories.Interfaces
 {
-    public class IBookingRepository
+    public interface IBookingRepository : IGenericRepository<Booking>
     {
+        void Update(Booking obj);
     }
 }
+    

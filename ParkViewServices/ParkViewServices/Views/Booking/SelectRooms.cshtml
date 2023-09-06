@@ -1,0 +1,111 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model SelectViewModel
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8">
+            @foreach (var item in Model.roomCounts)
+            {
+                <div class="card mb-3" style="max-width: 800px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.RoomType.RoomTypeName</h5>
+                                <p class="card-text">@item.RoomType.Description</p>
+                                <p class="card-text">@item.RoomType.Price</p>
+                                <p class="card-text"><small class="text-body-secondary">@(item.Count - item.Occupied)</small></p>
+                                <a asp-controller="BookingCart" asp-action="AddToCart" asp-route-RoomTypeId=@item.RoomType.Id asp-route-HotelId=@Model.HotelId class="btn btn-primary @if(Model.booking.NumberOfRooms == Model.bookedRooms.Count()) { <text>disabled</text> }" >Select Room</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    <div class="col-md-4">
+           @if(Model.bookedRooms == null)
+           {
+               <p>You have not selected room</p>
+           }
+           else
+           {
+            @foreach (var item in Model.bookedRooms)
+            {
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">1x @item.RoomType.RoomTypeName</h5>
+                    <p class="card-text">@item.RoomType.Price</p>
+                    <a asp-controller="BookingCart" asp-action="RemoveFromCart" asp-route-RoomId="@item.Id" asp-route-HotelId="@item.HotelId" class="btn btn-primary">Remove</a>
+                  </div>
+                </div>
+            }
+           }
+            <a asp-controller="Booking" asp-action="Confirmation" 
+            class="btn btn-primary center @if(Model.booking.NumberOfRooms != Model.bookedRooms.Count()) {
+            <text>disabled</text>
+}">Review & Pay</a>
+        </div>
+    </div>
+</div>
+@*
+
+<div class="card text-center">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            @foreach (var item in Model.roomCounts)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" data-tab="@item.RoomType.RoomTypeName" href="#">@item.RoomType.RoomTypeName</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="card-body">
+        @foreach (var item in Model.roomCounts)
+        {
+            <div class="tab-content" data-tab-content="@item.RoomType.RoomTypeName">
+                <h5 class="card-title">@item.RoomType.RoomTypeName</h5>
+                <p class="card-text">Content specific to @item.RoomType.RoomTypeName.</p>
+                <!-- Add content specific to each tab -->
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle tab clicks and show/hide content
+    document.addEventListener("DOMContentLoaded", function () {
+        const tabLinks = document.querySelectorAll(".nav-link");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabLinks.forEach(function (link) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                // Get the data-tab attribute value
+                const targetTab = link.getAttribute("data-tab");
+
+                // Hide all tab contents
+                tabContents.forEach(function (content) {
+                    content.style.display = "none";
+                });
+
+                // Show the selected tab content
+                const selectedTabContent = document.querySelector(`[data-tab-content="${targetTab}"]`);
+                if (selectedTabContent) {
+                    selectedTabContent.style.display = "block";
+                }
+            });
+        });
+    });
+</script>
+
+*@
