@@ -22,6 +22,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();  
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
+builder.Services.AddAuthentication().AddGoogle(
+    GoogleOptions =>
+    {
+        GoogleOptions.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+        GoogleOptions.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,238 @@
+<style>
+    .slide {
+        height: 100%;
+        width: 100%;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slide ::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+        width: 100%;
+        background: radial-gradient(500px 350px at 20% bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0));
+
+        height: calc(100% - 4px) !important;
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slide-image,
+    .slide-video {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .image-wrapper.loaded {
+        opacity: 1;
+    }
+
+    .image-wrapper {
+        overflow: hidden;
+        display: block;
+        line-height: 0;
+        height: 522px;
+
+        width: 100%;
+
+        transition: opacity .2s ease;
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slide-content {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin-top: 0;
+        padding: 15px;
+        position: absolute;
+        height: 100%;
+        color: #fff;
+        display: flex;
+
+        width: 100%;
+        box-sizing: inherit;
+        margin: 0;
+        z-index: 2;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    .slide-titles {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .slide-title {
+        font-size: 1.875rem;
+        text-shadow: 1px 4px 70px rgba(0, 0, 0, .5);
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .slide-utility {
+        margin-top: 20px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .slide-price,
+    .slide-ctas {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+    }
+
+    .slide-cta-primary {
+        cursor: pointer;
+        display: inline-flex;
+        position: relative;
+        white-space: nowrap;
+
+        font-family: var(--AkkuratBold), Arial, sans-serif;
+        flex-direction: column;
+        justify-content: center;
+
+        font-size: 1rem;
+
+        transition: .4s ease;
+
+        z-index: 1;
+        border-radius: 22px;
+        color: #242021;
+        background-color: #fff;
+        left: 0;
+        padding: 0 24px;
+        height: 44px;
+    }
+
+    a {
+        text-decoration: none;
+        box-sizing: inherit;
+        margin: 0;
+    }
+
+    .slide-cta-primary::before {
+        transition: right .2s ease;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        left: 0;
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+
+
+<div class="slide" style="width: 100%; display: inline-block">
+    <div class="slide-image">
+        <picture class="image-wrapper loaded" style="
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-image: url('https://photos.mandarinoriental.com/is/image/MandarinOriental/bangkok-16-hotel-the-authors-wing-dusk-01?wid=1024&amp;hei=576&amp;fmt=jpeg&amp;op_usm=1,1,5,0&amp;resMode=sharp2&amp;fit=crop&amp;qlt=75,0');
+      ">
+            <source type="image/jpeg" media="(min-width: 1024px)" srcset="
+          https://photos.mandarinoriental.com/is/image/MandarinOriental/bangkok-16-hotel-the-authors-wing-dusk-01?wid=1600&amp;hei=900&amp;fmt=jpeg&amp;op_usm=1,1,5,0&amp;resMode=sharp2&amp;fit=crop&amp;qlt=75,0
+        " />
+            <source type="image/jpeg" media="(min-width: 768px)" srcset="
+          https://photos.mandarinoriental.com/is/image/MandarinOriental/bangkok-16-hotel-the-authors-wing-dusk-01?wid=1280&amp;hei=720&amp;fmt=jpeg&amp;op_usm=1,1,5,0&amp;resMode=sharp2&amp;fit=crop&amp;qlt=75,0
+        " />
+            <source type="image/jpeg" media="(min-width: 0px)" srcset="
+          https://photos.mandarinoriental.com/is/image/MandarinOriental/bangkok-16-hotel-the-authors-wing-dusk-01?wid=1024&amp;hei=576&amp;fmt=jpeg&amp;op_usm=1,1,5,0&amp;resMode=sharp2&amp;fit=crop&amp;qlt=75,0
+        " />
+            <img alt="Exterior view of Mandarin Oriental, Bangkok"
+                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="image"
+                style="height: 272.25px" />
+        </picture>
+    </div>
+    <div class="slide-content">
+        <div class="slide-titles">
+            <div class="slide-title">Bangkok</div>
+        </div>
+        <div class="slide-utility">
+            <div class="slide-price">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="slide-ctas">
+                <a href="/en/bangkok/chao-phraya-river" target="_self" class="slide-cta-primary" tabindex="0">See
+                    More</a>
+            </div>
+            <div class="slide-content">
+                <div class="slide-titles">
+                    <div class="slide-title">Bangkok</div>
+                </div>
+                <div class="slide-utility">
+                    <div class="slide-price">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="slide-ctas">
+                        <a href="/en/bangkok/chao-phraya-river" target="_self" class="slide-cta-primary"
+                            tabindex="0">See More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <ul class="tab-group-tabs container">
+            
+            <li role="presentation" data-id="asia-pacific" class="tab-group-tab" ><a href="#asia-pacific"
+                    role="tab" aria-controls="asia-pacific" tabindex="-1" aria-selected="false"
+                    class="tab-group-button">
+                    <div class="title"><span>Asia-Pacific</span></div>
+                </a></li> <span style="display: none;">0</span>
+            <li role="presentation" data-id="theamericas" class="tab-group-tab active" ><a
+                    href="#theamericas" role="tab" aria-controls="theamericas" tabindex="0" aria-selected="true"
+                    class="tab-group-button">
+                    <div class="title"><span>The Americas</span></div>
+                </a></li> <span style="display: none;">1</span>
+            <li role="presentation" data-id="europe" class="tab-group-tab" ><a href="#europe" role="tab"
+                    aria-controls="europe" tabindex="-1" aria-selected="false" class="tab-group-button">
+                    <div class="title"><span>Europe</span></div>
+                </a></li> <span style="display: none;">2</span>
+            <li role="presentation" data-id="middleeast&amp;africa" class="tab-group-tab" data-index="3"><a
+                    href="#middleeast&amp;africa" role="tab" aria-controls="middleeast&amp;africa" tabindex="-1"
+                    aria-selected="false" class="tab-group-button">
+                    <div class="title"><span>Middle East &amp; Africa</span></div>
+                </a></li>
+        </ul>

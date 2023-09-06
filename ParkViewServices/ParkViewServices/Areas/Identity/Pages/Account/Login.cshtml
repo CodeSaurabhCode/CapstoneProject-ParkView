@@ -5,7 +5,29 @@
     ViewData["Title"] = "Log in";
 }
 
+
+
 <h1>@ViewData["Title"]</h1>
+<div class='maincontainer'>
+    <div class='content'>
+        <div class='welcome'>Welcome Back!</div>
+
+        <div class='input-fields'>
+
+            <input type='email' placeholder='Email' class='input-line full-width' id="Email">
+            <input type='password' placeholder='Password' class='input-line full-width' id="Password">
+
+        </div>
+
+        <div class='spacing'>Don't have an Account ?  <span class='highlight' [routerLink]="['/signup']">Sign Up</span></div>
+        <div><button class='ghost-round full-width' (click)="checklogin()">Log In</button></div>
+        <div><button class='ghost-round full-width' *ngIf="temp" [routerLink]="['']">Dashboard</button></div>
+
+
+    </div>
+
+</div>
+
 <div class="row">
     <div class="col-md-4">
         <section>

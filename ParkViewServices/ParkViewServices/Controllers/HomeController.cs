@@ -31,5 +31,11 @@ namespace ParkViewServices.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult Explore()
+        {
+            return View();
+        }
+
     }
 }

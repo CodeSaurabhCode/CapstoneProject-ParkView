@@ -1,0 +1,199 @@
+
+#topheader{
+    background-color:#0f2453; 
+    border-bottom: 1px solid #947c54;
+}
+
+.btn-custom{
+    background-color: white;
+    color:#967A50; 
+    border-radius: 2 2 2 2;
+} 
+.carousel-item{
+    height: 650px;
+} 
+.carousel-item img{
+    height: 650px;
+}
+.bottom-footer{
+    background-color: #0f2453;
+}
+#bottomheader ul li a{
+ font-weight: 500;
+    font-size: 1.125rem;
+    display: block;
+    position: relative;
+    text-transform: uppercase;
+    overflow: hidden;
+    line-height: 2.25rem;
+    letter-spacing: .15em
+
+}
+#bottomheader ul li a:hover{
+    color: #947c54;
+    font-weight: 10px;
+    border-radius: 0.4rem;
+}
+.nav-item{
+    background-color: #0f2453   ;
+}
+.dropdown-menu{
+    background-color: #0f2453;
+}
+a,p{
+    color: white; 
+    font-weight: 0.87rem;
+}
+
+.dropdown-menu a:hover{
+    background-color:#0f2453;
+    color: #947c54;
+}
+
+
+.bottom-footer{
+    color:#947c54; 
+    border-top: 1px solid #947c54;
+}
+
+.paradise-travels {
+    background-color: white;
+    margin-top : 20px;
+    margin-bottom: 40px;
+    font-weight: 5rem;
+    font-size: 50px;
+    color: #0f2453;
+    letter-spacing: 0.89rem;
+}
+.paradise-travels-1{
+
+    font-weight: 5rem;
+    font-size: x-large;
+    color: #0f2453;
+    text-align: center;
+    padding: 2rem;
+    
+
+}
+.deco i{
+    color: rgba(148, 124, 84, 0.32);
+    font-size: 40px;
+}
+.deco{
+    font-size: 35px;
+    font-weight: 0.4rem;    
+}
+.luxury{
+    background-color: #0f2453;
+}
+.luxury h1{
+    color:#947c54;
+    font-weight: 0.8rem;
+    font-size: 50px;
+    word-spacing: 0.89rem;
+    letter-spacing: 0.8rem;
+}
+.luxury h4{
+    padding-top: 35px;
+    padding-bottom: 100px;
+    color: white;
+    font-weight: 0.4rem;
+    
+}
+h1,h2,h3,h4,h5,h6{
+    color:#947c54;
+    padding-top: 1px;
+} 
+
+hr{
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(148, 124, 84), rgba(212, 194, 160, 0));
+}
+.card-body p{
+    text-indent : 5em;
+    color: #A9A9A9; 
+    font-weight: 0.87rem;
+}
+
+.b{
+    font-size: 20px;
+    font-style: bold;
+    color: #0f2453;
+}
+.b:active{
+    color: #947c54;
+
+}
+.b:link{
+    color: #947c54;
+}
+
+
+.linked  a{
+    font-size: 1.15rem;    
+    }
+    .linked a:hover{
+        font-size:1.3rem;
+        color: #947c54;
+        border-bottom: 5px solid color transparent;
+        text-decoration: rgba(148, 124, 84);
+    }
+    .underline li > a{
+        text-decoration: none;
+    
+    }
+    .underline li > a:hover{
+        color:#947c54;
+    
+    }
+    .underline li > a::before{
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 2px;
+        bottom: 0;
+        left: 15%;
+        right: 15%;
+        background-color: #947c54;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    
+    }
+    
+    
+    .underline li > a:hover::before{
+        visibility: visible;
+      transform: scaleX(1);
+    }
+    
+    
+    .underline-1> a{
+        text-decoration: none;
+    
+    }
+    .underline-1 > a:hover{
+        color:#947c54;
+    
+    }
+    .underline-1 > a::before{
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 2px;
+        bottom:0;
+        left:15%;
+        right:15%; 
+        background-color: #947c54;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    
+    }
+    
+    
+    .underline-1 > a:hover::before{
+        visibility: visible;
+      transform: scaleX(1);
+    }

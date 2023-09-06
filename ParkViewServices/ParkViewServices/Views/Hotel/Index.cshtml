@@ -1,0 +1,328 @@
+﻿
+<style>
+    
+    /*videoContainer*/
+
+    .masthead-wrapper {
+        position: relative;
+        overflow: hidden;
+        min-height: 38.8125rem;
+    }
+
+    .masthead-video {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .video-wrapper {
+        padding: 0;
+        line-height: 0;
+        height: 38.8125rem;
+    }
+
+    .masthead-video video {
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .masthead-content.container {
+    padding-bottom: 65px;
+    padding-left:80px;
+}
+.masthead-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    animation: masthead-opacity-fadeIn-animation 2s;
+    justify-content: flex-end;
+}
+@@media only screen and (min-width: 576px)
+.container {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.container {
+    
+    margin-right: auto;
+    margin-left: auto;
+    
+    max-width: 100%;
+}
+
+    .masthead-eyebrow {
+        
+        font-size: 1.3rem;
+        color: #fff;
+        margin-bottom: 8px;
+        font-family: AkkuratLLWebPan-Regular,Arial,sans-serif;
+    }
+
+    .masthead-title {
+        font-family: "Didot LT W02 Roman",Garamond,Times New Roman,serif; color: #fff;
+        font-size: 5.5rem;
+        line-height: 1.2;
+        letter-spacing: -2px;
+        font-weight: 400;
+    }
+
+    /*detailsContainer*/
+
+    .detailsDiv {
+        display: flex;
+        
+        width: 100%;
+        margin-top:70px;
+        padding-left:50px;
+        padding-right:50px;
+        margin-right: auto;
+        margin-left: auto;
+        
+        max-width: 100%;
+        line-height: 1.2;
+        height: 100%;
+        color: #242021;
+    }
+
+    .detailsDiv-right {
+        padding: 30px 32px;
+        margin-right:40px;
+        
+        width: 150%;
+        
+        background-color: #f5f5f5;
+        
+        margin-top: -3px;
+    }
+
+     
+
+    
+
+    .DetailsDiv-right-content h3{
+            font-size: 3rem;
+            font-weight: 400;
+            font-family: "Didot LT W02 Roman",Garamond,Times New Roman,serif;
+            
+    }
+
+    .detailsFont {
+        font-size: 1rem;
+        line-height: 1.5;
+        letter-spacing: -.36px;
+        font-family: AkkuratLLWebPan-Regular,Arial,sans-serif;
+    }
+
+
+    section {
+        width: 80%;
+        margin: 0 auto;
+        line-height: 0;
+        position: relative;
+        overflow:hidden;
+        height:100%;
+        background-color: rgba(0,0,0,0);
+    }
+
+     section img {
+            width: 100%;
+        }
+
+        section article {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+            mix-blend-mode: lighten;
+        }
+
+        section div {
+            background: black;
+            height: 15.3vw;
+        }
+
+            section div:nth-of-type(2) {
+                grid-column: 0.5;
+            }
+
+
+
+</style>
+<div class="masthead-wrapper">
+    <div class="masthead-video">
+        <div class="video-wrapper">
+            <video autoplay="autoplay"
+                   muted="muted"
+                   loop="loop"
+                   playsinline="true"
+                   webkit-playsinline="true">
+                <source src="~/Videos/mainpage.mp4"
+                        type="video/mp4" />
+                This video format is not supported by your browser
+            </video>
+        </div>
+
+
+        <div class="masthead-content container">
+            <div class="masthead-eyebrow">Mandarin Oriental</div>
+            <h1 class="masthead-title">Bangkok</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="detailsDiv">
+    <div class="DetailsDivs-left">
+        <section >
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/portrait.jpg" alt="">
+            <article>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </article>
+        </section>
+    </div>
+    <div class="detailsDiv-right">
+        <div class="DetailsDiv-right-content">
+            <div class="detailsFont"><em>Your journey begins here</em></div>
+            <p>&nbsp;</p>
+            <h3>Bangkok</h3>
+            <div class="detailsFont">&nbsp;</div>
+            <div class="detailsFont">
+                For more than 147 years, travellers have followed the Chao Phraya River
+                to stay at the legendary Mandarin Oriental, Bangkok. A luxury five-star
+                hotel in one of the world’s most exciting cities, we enjoy a reputation
+                for style, service and excellence. A haven of calm on the banks of the
+                river, Mandarin Oriental, Bangkok is a truly remarkable hotel. This
+                iconic hotel has reopened the River Wing following the largest
+                renovation in our 147-year history. This stunning transformation has
+                further enhanced the accommodations and facilities in our iconic hotel,
+                while maintaining our classic, Thai-influenced elegance and unique
+                resort style.
+            </div>
+            <p class="detailsFont">&nbsp;</p>
+        </div>
+    </div>
+</div>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Our Rooms</h6>
+            <h1 class="mb-5">Explore Our <span class="text-primary text-uppercase">Rooms</span></h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="img/room-1.jpg" alt="">
+                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Junior Suite</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                        </div>
+                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="img/room-2.jpg" alt="">
+                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Executive Suite</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                        </div>
+                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="img/room-3.jpg" alt="">
+                        <small class="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">$100/Night</small>
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h5 class="mb-0">Super Deluxe</h5>
+                            <div class="ps-2">
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                                <small class="fa fa-star text-primary"></small>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                            <small class="border-end me-3 pe-3"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                            <small><i class="fa fa-wifi text-primary me-2"></i>Wifi</small>
+                        </div>
+                        <p class="text-body mb-3">Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                        <div class="d-flex justify-content-between">
+                            <a class="btn btn-sm btn-primary rounded py-2 px-4" href="">View Detail</a>
+                            <a class="btn btn-sm btn-dark rounded py-2 px-4" href="">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+/*<partial name="_partial_allrooms" />*/
+
+
+
+
+
+

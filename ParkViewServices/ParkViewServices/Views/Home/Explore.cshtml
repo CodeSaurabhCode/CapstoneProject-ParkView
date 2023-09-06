@@ -1,0 +1,131 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+
+    * {
+        box-sizing: border-box;
+        opacity:1;
+    }
+
+    .col{
+        display: flex;
+        flex-direction : column;
+        padding : 20px 0px;
+    }
+
+    .text1 , .text2{
+        padding : 10px auto;
+        align-content: center;
+    }
+
+    .tab-group-tabs {
+        display: flex;
+        position: relative;
+        justify-content: flex-start;
+        padding-bottom: 4px;
+        list-style: none;
+    }
+
+    .container {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+        max-width: 100%;
+    }
+
+    ul {
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+
+    .tab-group-tab {
+        display: flex;
+        white-space: nowrap;
+        cursor: pointer;
+        position: relative;
+        margin: 0 15px;
+        
+        padding: 10px 0;
+        color: #676060;
+    }
+
+     .tab-group-button {
+            display: flex;
+            padding: 10px 0;
+            color: #676060;
+        }
+
+    a {
+        color: inherit;
+        position: relative;
+        text-decoration: none;
+    }
+
+
+    
+    a:-webkit-any-link {
+        
+        cursor: pointer;
+        
+    }
+
+
+
+
+</style>
+
+<p>
+    Explore
+</p>
+
+<partial name="_explorepageslider"  />
+
+<div class="detailsgrid">
+
+    <div class="row">
+        <div class="col">
+            <div class="text1">
+                Inspired
+            </div>
+            <div class="text2">
+                HOTELS & RESORTS
+            </div>
+
+        </div>
+        <div class="col">
+            From bustling cities to remote beaches — and just about everything in between — discover how The Ritz-Carlton inspires life’s most meaningful journeys in destinations around the world.
+        </div>
+    </div>
+
+
+<partial name="_partial_map" />
+
+
+</div>
+
+<ul class="tab-group-tabs container">
+    <li class="tab-group-tab active">
+        <a href="#" class="tab-group-button">
+            <div class="title">India</div>
+        </a>
+
+    </li>
+
+    <li class="tab-group-tab">
+        <a href="#" class="tab-group-button">
+            <div class="title">Others</div>
+        </a>
+
+    </li>
+</ul>
+
+
+<partial name="_partial_allhotels" />
+

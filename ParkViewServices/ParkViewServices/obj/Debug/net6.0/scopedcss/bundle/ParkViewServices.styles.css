@@ -1,49 +1,439 @@
+/* _content/ParkViewServices/Areas/Identity/Pages/Account/Login.cshtml.rz.scp.css */
+@@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,100,500');
+
+body[b-g3137w279x],
+html[b-g3137w279x] {
+    margin: 0;
+    height: 100%;
+}
+
+input[b-g3137w279x] {
+    border: none;
+}
+
+button:focus[b-g3137w279x] {
+    outline: none;
+}
+
+[b-g3137w279x]::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+
+.highlight[b-g3137w279x] {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+    .highlight:hover[b-g3137w279x] {
+        color: #fff;
+        transition: color .2s ease;
+    }
+
+.spacing[b-g3137w279x] {
+    flex-grow: 1;
+    height: 60px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.65)
+}
+
+.input-line:focus[b-g3137w279x] {
+    outline: none;
+    border-color: #fff;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.ghost-round[b-g3137w279x] {
+    cursor: pointer;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 25px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 19px;
+    font-size: 1.2rem;
+    font-family: roboto;
+    font-weight: 300;
+    line-height: 2.5em;
+    margin-top: auto;
+    margin-bottom: 30px;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+    .ghost-round:hover[b-g3137w279x] {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+
+.input-line[b-g3137w279x] {
+    background: none;
+    margin-bottom: 10px;
+    line-height: 2.4em;
+    color: #fff;
+    font-family: roboto;
+    font-weight: 300;
+    font-size: 19px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.full-width[b-g3137w279x] {
+    width: 100%;
+}
+
+.input-fields[b-g3137w279x] {
+    margin-top: 25px;
+}
+
+
+
+.content[b-g3137w279x] {
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    flex-flow: column;
+    z-index: 5;
+}
+
+.welcome[b-g3137w279x] {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 200;
+    margin-top: 65px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.subtitle[b-g3137w279x] {
+    text-align: center;
+    line-height: 1em;
+    font-weight: 100;
+}
+
+
+.maincontainer[b-g3137w279x] {
+    background: -webkit-linear-gradient(#8CA6DB,#8114d4 );
+    background: linear-gradient(#8CA6DB, #8114d4);
+    opacity: 0.85;
+    margin: 50px auto;
+    height: auto;
+    width: 360px;
+    z-index: 1;
+}
+
+
+@media (max-width: 500px) {
+    .window[b-g3137w279x] {
+        width: 100%;
+        height: 100%;
+    }
+
+    .maincontainer[b-g3137w279x] {
+        width: 100%;
+        height: 100%;
+    }
+}
+/* _content/ParkViewServices/Views/Home/index.cshtml.rz.scp.css */
+.navigation[b-amjnqbvfgt] {
+    padding-top: 45px;
+    padding-bottom: 30px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-right[b-amjnqbvfgt] {
+    float: right;
+    padding-top:3.5%;
+    padding-right: 12%;
+}
+
+    .navbar-right a[b-amjnqbvfgt] {
+        text-decoration: none;
+        padding: 25px;
+        font-size:22px;
+        color: #fff;
+        font-family: Arial;
+        font-weight: 900;
+    }
+
+        .navbar-right a:hover[b-amjnqbvfgt] {
+            text-decoration: underline;
+        }
+
+.navbar-logo[b-amjnqbvfgt] {
+    padding-left: 10%;
+}
+
+.video-background[b-amjnqbvfgt] {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: auto;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: -2;
+}
+
+/* Section styles */
+
+*[b-amjnqbvfgt] {
+    box-sizing: border-box;
+}
+
+body[b-amjnqbvfgt] {
+    margin: 0;
+}
+
+section[b-amjnqbvfgt] {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    overflow: hidden;
+    &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    z-index: -1;
+    s
+             }
+}
+
+h1[b-amjnqbvfgt] {
+    padding-top: 100px;
+    margin-bottom:0px;
+    /*margin: 0 0 0.3em;*/
+    color: #fff;
+    font-size: 50px;
+    font-weight:500;
+    font-family: TFArrow;
+}
+
+@@media (min-width: 768px) .subtitle {
+    width: 100%;
+    opacity: 1;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: .9px;
+}
+
+.subtitle[b-amjnqbvfgt]{
+    font-size: 32px;
+    opacity: .98;
+    margin-top:0px;
+    line-height: 1.18;
+    letter-spacing: 0;
+    color: #fff;
+    font-family: TFArrow;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 1.5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+
+
+button[b-amjnqbvfgt] {
+    padding: 13px 38px;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 1.60em;
+    
+    color: inherit;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+
+    button:hover[b-amjnqbvfgt] {
+        background: rgba(0,0,0,0.9);
+    }
 /* _content/ParkViewServices/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand[b-kw2121erzg] {
+/*a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
 }
 
-a[b-kw2121erzg] {
+a {
   color: #0077cc;
 }
 
-.btn-primary[b-kw2121erzg] {
+.btn-primary {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
-.nav-pills .nav-link.active[b-kw2121erzg], .nav-pills .show > .nav-link[b-kw2121erzg] {
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
-.border-top[b-kw2121erzg] {
+.border-top {
   border-top: 1px solid #e5e5e5;
 }
-.border-bottom[b-kw2121erzg] {
+.border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.box-shadow[b-kw2121erzg] {
+.box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
-button.accept-policy[b-kw2121erzg] {
+button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
 }
 
-.footer[b-kw2121erzg] {
+.footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}*/
+
+
+/*.navigation {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
+
+.navbar-right {
+    float: right;
+    padding-right: 10%;
+}
+
+    .navbar-right a {
+        text-decoration: none;
+        padding: 10px;
+        color: #fff;
+        font-family: Arial;
+        font-weight: 900;
+    }
+
+        .navbar-right a:hover {
+            text-decoration: underline;
+        }
+
+.navbar-logo {
+    padding-left: 10%;
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.video-background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    max-width: auto;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: -2;
+}*/
+
+/* Section styles */
+
+/** {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    overflow: hidden;
+    &::before
+
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    z-index: -1;
+}
+
+}
+
+h1 {
+    font-size: 3.7em;
+    margin: 0 0 0.3em;
+}
+
+p {
+    font-size: 1.3em;
+    margin: 0 0 1.6em;
+}
+
+button {
+    padding: 15px 36px;
+    border: 2px solid white;
+    background: transparent;
+    font-size: 1.05em;
+    color: inherit;
+    cursor: pointer;
+    transition: background .3s ease-in-out;
+}
+
+    button:hover {
+        background: rgba(255,255,255,0.3);*/
+    
