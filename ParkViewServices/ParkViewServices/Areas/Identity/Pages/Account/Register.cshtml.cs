@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
@@ -144,7 +147,7 @@ namespace ParkViewServices.Areas.Identity.Pages.Account
                         values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
+                    await SendEmailAsync(Input.Email, "Confirm your email",
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
@@ -165,6 +168,37 @@ namespace ParkViewServices.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        public async Task SendEmailAsync(string email, string subject, string message)
+        {
+            try
+            {
+                var smtpClient = new SmtpClient("smtp.gmail.com")
+                {
+                    Port = 587,
+                    Credentials = new NetworkCredential("noreplyparkview@gmail.com", "Park@1005"), // Use your App Password here
+                    EnableSsl = true,
+                };
+
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress("noreplyparkview@gmail.com"),
+                    Subject = subject,
+                    Body = message,
+                    IsBodyHtml = true,
+                };
+
+                mailMessage.To.Add(email);
+
+                await smtpClient.SendMailAsync(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception, e.g., log it or throw a custom exception
+                Console.WriteLine($"Error sending email: {ex.Message}");
+                throw;
+            }
         }
 
         private ApplicationUser CreateUser()

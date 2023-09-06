@@ -24,8 +24,6 @@ namespace ParkViewServices.Repositories
         public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
-           
-
             query = query.Where(filter);
             if (!string.IsNullOrEmpty(includeProperties))
             {

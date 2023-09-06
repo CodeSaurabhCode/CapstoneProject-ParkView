@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ParkViewServices.Models;
+using ParkViewServices.Models.Bookings;
 using ParkViewServices.Repositories.Interfaces;
 using System.Diagnostics;
 
@@ -16,8 +17,10 @@ namespace ParkViewServices.Controllers
 
         public IActionResult Index()
         { 
+            Booking booking = new Booking();    
             var hotels = _unitOfWork.Hotel.GetAll(includeProperties : "City");
-            return View(hotels);
+            var cities = _unitOfWork.City.GetAll();
+            return View(booking);
         }
 
         public IActionResult Privacy(int id)

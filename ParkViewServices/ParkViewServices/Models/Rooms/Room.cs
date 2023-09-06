@@ -16,6 +16,6 @@ namespace ParkViewServices.Models.Rooms
         public int HotelId { get; set; }
         public Hotel Hotel { get; set; }
 
-        public ICollection<BookingRoom> BookingRooms { get; set; }
+        //public ICollection<BookingRoom> BookingRooms { get; set; }
     }
 }

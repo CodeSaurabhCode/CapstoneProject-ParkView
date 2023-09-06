@@ -173,12 +173,10 @@ namespace ParkViewServices.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -215,12 +213,10 @@ namespace ParkViewServices.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -228,6 +224,17 @@ namespace ParkViewServices.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("ParkViewServices.Models.Bookings.BookedList", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BookedList");
                 });
 
             modelBuilder.Entity("ParkViewServices.Models.Bookings.Booking", b =>
@@ -238,85 +245,50 @@ namespace ParkViewServices.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("AdditionalGuestInfo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid?>("BookedListId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("BookingDate")
+                    b.Property<DateTime?>("BookingDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("BookingNotes")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BookingSource")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CancellationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CancellationPolicy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CheckInDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("CheckInTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CheckOutDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("CheckOutTime")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ConfirmationNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCancelled")
+                    b.Property<bool?>("IsCancelled")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsConfirmed")
+                    b.Property<bool?>("IsConfirmed")
                         .HasColumnType("bit");
 
                     b.Property<int>("NumberOfAdults")
                         .HasColumnType("int");
 
-                    b.Property<int>("NumberOfChildren7To12")
+                    b.Property<int?>("NumberOfChildren7To12")
                         .HasColumnType("int");
 
-                    b.Property<int>("NumberOfChildrenBelow7")
+                    b.Property<int?>("NumberOfChildrenBelow7")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("PaymentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("NumberOfRooms")
+                        .HasColumnType("int");
 
                     b.Property<string>("PaymentStatus")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PromoCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("RoomRate")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("SpecialRequests")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalAmount")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("TransactionId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserEmail")
                         .IsRequired()
@@ -324,22 +296,34 @@ namespace ParkViewServices.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BookedListId");
+
                     b.ToTable("Bookings");
                 });
 
-            modelBuilder.Entity("ParkViewServices.Models.Bookings.BookingRoom", b =>
+            modelBuilder.Entity("ParkViewServices.Models.Bookings.BookingCartRoom", b =>
                 {
-                    b.Property<int>("BookingId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("BookingCartId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.Property<int>("RoomId")
                         .HasColumnType("int");
 
-                    b.HasKey("BookingId", "RoomId");
+                    b.HasKey("Id");
 
                     b.HasIndex("RoomId");
 
-                    b.ToTable("BookingRooms");
+                    b.ToTable("BookingCartRooms");
                 });
 
             modelBuilder.Entity("ParkViewServices.Models.Hotels.City", b =>
@@ -1962,21 +1946,22 @@ namespace ParkViewServices.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ParkViewServices.Models.Bookings.BookingRoom", b =>
+            modelBuilder.Entity("ParkViewServices.Models.Bookings.Booking", b =>
                 {
-                    b.HasOne("ParkViewServices.Models.Bookings.Booking", "Booking")
-                        .WithMany("BookingRooms")
-                        .HasForeignKey("BookingId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("ParkViewServices.Models.Bookings.BookedList", "BookedList")
+                        .WithMany()
+                        .HasForeignKey("BookedListId");
 
+                    b.Navigation("BookedList");
+                });
+
+            modelBuilder.Entity("ParkViewServices.Models.Bookings.BookingCartRoom", b =>
+                {
                     b.HasOne("ParkViewServices.Models.Rooms.Room", "Room")
-                        .WithMany("BookingRooms")
+                        .WithMany()
                         .HasForeignKey("RoomId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Booking");
 
                     b.Navigation("Room");
                 });
@@ -2061,16 +2046,6 @@ namespace ParkViewServices.Migrations
                         .IsRequired();
 
                     b.Navigation("RoomType");
-                });
-
-            modelBuilder.Entity("ParkViewServices.Models.Bookings.Booking", b =>
-                {
-                    b.Navigation("BookingRooms");
-                });
-
-            modelBuilder.Entity("ParkViewServices.Models.Rooms.Room", b =>
-                {
-                    b.Navigation("BookingRooms");
                 });
 #pragma warning restore 612, 618
         }
