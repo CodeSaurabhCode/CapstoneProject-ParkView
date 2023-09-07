@@ -2,21 +2,165 @@
     ViewData["Title"] = "Home Page";
     Layout = "_startpagelayout";
 }
+<style>
+    .navigation {
+        padding-top: 45px;
+        padding-bottom: 30px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .navbar-right {
+        float: right;
+        padding-top: 3.5%;
+        padding-right: 12%;
+    }
+
+        .navbar-right a {
+            text-decoration: none;
+            padding: 25px;
+            font-size: 22px;
+            color: #fff;
+            font-family: Arial;
+            font-weight: 900;
+        }
+
+    a {
+        text-decoration: none;
+        padding: 25px;
+        font-size: 22px;
+        color: #fff;
+        font-family: Arial;
+        font-weight: 900;
+    }
+
+    .navbar-right a:hover {
+        text-decoration: underline;
+    }
+
+    .navbar-logo {
+        padding-left: 10%;
+    }
+
+    .video-background {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        max-width: auto;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        z-index: -2;
+    }
+
+    /* Section styles */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    section {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+        font-family: 'Nunito Sans', sans-serif;
+        overflow: hidden;
+        &::before
+
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: -1;
+        s
+    }
+
+    }
+
+    h1 {
+        padding-top: 100px;
+        margin-bottom: 0px;
+        /*margin: 0 0 0.3em;*/
+        color: #fff;
+        font-size: 50px;
+        font-weight: 500;
+        font-family: TFArrow;
+    }
+
+    @@media (min-width: 768px) .subtitle {
+        width: 100%;
+        opacity: 1;
+        font-size: 32px;
+        line-height: 1.18;
+        letter-spacing: .9px;
+    }
+
+    .subtitle {
+        font-size: 32px;
+        opacity: .98;
+        margin-top: 0px;
+        line-height: 1.18;
+        letter-spacing: 0;
+        color: #fff;
+        font-family: TFArrow;
+        font-weight: 500;
+        font-style: normal;
+        font-stretch: normal;
+        display: block;
+        margin-block-start: 0.5em;
+        margin-block-end: 1.5em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .button {
+        padding: 13px 38px;
+        border: 2px solid white;
+        background: transparent;
+        font-size: 1.60em;
+        color: inherit;
+        cursor: pointer;
+        transition: background .3s ease-in-out;
+    }
+
+        button:hover {
+            background: rgba(0,0,0,0.9);
+        }
+
+</style>
 
 <section>
     <nav class="navigation">
-        <a href="#" class="navbar-logo">
+        <a asp-page="/home" class="navbar-logo">
             <img src="~/images/logo/white.png" height="150"  />
         </a>
         <div class="navbar-right">
-            <a href="#">Book Now</a>
+            <a asp-controller="Booking" asp-action="Index" >Book Now</a>
             
-            <a href="#">Contact</a>
+            <a >Contact</a>
         </div>
     </nav>
     <h1>Stay Different</h1>
     <div class="subtitle">Taking luxury hospitality to new heights</div>
-    <button>Discover</button>
+    <a class="button" asp-controller="Home" asp-action="Explore" >Discover</a>
     <video class="video-background" autoplay muted loop>
         <source src="/videos/mainpage.mp4" type="video/mp4">
     </video>

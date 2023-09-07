@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CityImagesViewModels
+
+<div class="card">
+    <h5 class="card-header">Where do you want to go</h5>
+    <div class="card-body">
+        <div class="row m-2">
+            <div class="col-md-1"></div>
+            @for (int i = 0; i < 5; i++)
+            { 
+                <div class="col-md-2">
+                    <div class="card" style="width: 13rem; ">
+                        <img src="@Url.Content(@Model.Images.ElementAt(i).ImagePath)" class="card-img-top" alt="..." style="height:200px; width:200px; align-items:center">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model.Cities.ElementAt(i).Name</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">@Model.Cities.ElementAt(i).Country.Name</h6>
+                            <a asp-controller="Booking" asp-action="Book" asp-route-cityId="@Model.Cities.ElementAt(i).Id" class="card-link">Show Hotels</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row m-2">
+            <div class="col-md-1"></div>
+            @for (int i = 5; i < 10; i++)
+            {
+                <div class="col-md-2">
+                    <div class="card" style="width: 13rem;">
+                        <img src="@Url.Content(@Model.Images.ElementAt(i).ImagePath)" class="card-img-top" alt="..." style="height:200px; width:200px">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model.Cities.ElementAt(i).Name</h5>
+                            <h6 class="card-subtitle mb-2 text-body-secondary">@Model.Cities.ElementAt(i).Country.Name</h6>
+                            <a asp-controller="Booking" asp-action="Book" asp-route-cityId="@Model.Cities.ElementAt(i).Id" class="card-link">Show Hotels</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>

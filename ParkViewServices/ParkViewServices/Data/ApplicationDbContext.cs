@@ -18,11 +18,15 @@ namespace ParkViewServices.Data
         public DbSet<RoomCount> RoomCount { get; set; }
         public DbSet<RoomImages> RoomImages { get; set; }
         public DbSet<HotelImages> HotelImages { get; set; }
+        public DbSet<BookedList> BookedList { get; set; }
 
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<BookingRoom> BookingRooms { get; set; }
+        //public DbSet<BookingRoom> BookingRooms { get; set; }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
+        public DbSet<BookingCartRoom> BookingCartRooms { get; set; }
+        public DbSet<HotelSingleImage> HotelSingleImage { get; set; }
+        public DbSet<CityImage> CityImage { get; set; } 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -267,18 +271,47 @@ namespace ParkViewServices.Data
             
         );
 
-        modelBuilder.Entity<BookingRoom>()
-            .HasKey(br => new { br.BookingId, br.RoomId });
+            modelBuilder.Entity<HotelSingleImage>().HasData(
+                new HotelSingleImage { Id = 1, ImagePath = "~/images/1.jpg", HotelId = 1 },
+                new HotelSingleImage { Id = 2, ImagePath = "~/images/2.jpg", HotelId = 2 },
+                new HotelSingleImage { Id = 3, ImagePath = "~/images/3.jpg", HotelId = 3 },
+                new HotelSingleImage { Id = 4, ImagePath = "~/images/4.jpg", HotelId = 4 },
+                new HotelSingleImage { Id = 5, ImagePath = "~/images/5.jpg", HotelId = 5 },
+                new HotelSingleImage { Id = 6, ImagePath = "~/images/6.jpg", HotelId = 6 },
+                new HotelSingleImage { Id = 7, ImagePath = "~/images/7.jpg", HotelId = 7 },
+                new HotelSingleImage { Id = 8, ImagePath = "~/images/8.jpg", HotelId = 8 },
+                new HotelSingleImage { Id = 9, ImagePath = "~/images/9.jpg", HotelId = 9 },
+                new HotelSingleImage { Id = 10, ImagePath = "~/images/10.jpg", HotelId = 10 },
+                new HotelSingleImage { Id = 11, ImagePath = "~/images/11.jpg",  HotelId = 11 },
+                new HotelSingleImage { Id = 12, ImagePath = "~/images/12.jpg", HotelId = 12 },
+                new HotelSingleImage { Id = 13, ImagePath = "~/images/13.jpg", HotelId = 13 }
+            );
 
-        modelBuilder.Entity<BookingRoom>()
-            .HasOne(br => br.Booking)
-            .WithMany(b => b.BookingRooms)
-            .HasForeignKey(br => br.BookingId);
+            modelBuilder.Entity<CityImage>().HasData(
+                new CityImage { Id = 1, ImagePath = "~/images/new_delhi.jpg", CityId = 1 },
+                new CityImage { Id = 2, ImagePath = "~/images/mumbai.jpg", CityId = 2 },
+                new CityImage { Id = 3, ImagePath = "~/images/male.jpg", CityId = 3 },
+                new CityImage { Id = 4, ImagePath = "~/images/bangkok.jpg", CityId = 4 },
+                new CityImage { Id = 5, ImagePath = "~/images/beijing.jpg", CityId = 5 },
+                new CityImage { Id = 6, ImagePath = "~/images/chennai.jpg", CityId = 6 },
+                new CityImage { Id = 7, ImagePath = "~/images/kolkata.jpg", CityId = 7 },
+                new CityImage { Id = 8, ImagePath = "~/images/colombo.jpg", CityId = 8 },
+                new CityImage { Id = 9, ImagePath = "~/images/phuket.jpg", CityId = 9 },
+                new CityImage { Id = 10, ImagePath = "~/images/shanghai.jpg", CityId = 10 }
+            );
 
-        //modelBuilder.Entity<BookingRoom>()
-        //    .HasOne(br => br.Room)
-        //    .WithMany(r => r.BookingRooms)
-        //    .HasForeignKey(br => br.RoomId);
+            //modelBuilder.Entity<BookingRoom>()
+            //    .HasKey(br => new { br.BookingId, br.RoomId });
+
+            //modelBuilder.Entity<BookingRoom>()
+            //    .HasOne(br => br.Booking)
+            //    .WithMany(b => b.BookingRooms)
+            //    .HasForeignKey(br => br.BookingId);
+
+            //modelBuilder.Entity<BookingRoom>()
+            //    .HasOne(br => br.Room)
+            //    .WithMany(r => r.BookingRooms)
+            //    .HasForeignKey(br => br.RoomId);
 
             //modelBuilder.Entity<Hotel>()
             //.HasOne(h => h.Country)

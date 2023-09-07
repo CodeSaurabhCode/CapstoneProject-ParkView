@@ -1,4 +1,4 @@
-﻿
+﻿@model Hotel
 <style>
     
     /*videoContainer*/
@@ -176,8 +176,8 @@
 
 
         <div class="masthead-content container">
-            <div class="masthead-eyebrow">Mandarin Oriental</div>
-            <h1 class="masthead-title">Bangkok</h1>
+            <div class="masthead-eyebrow">@Model.Name</div>
+            <h1 class="masthead-title">@Model.City.Name</h1>
         </div>
     </div>
 </div>
@@ -200,7 +200,7 @@
         <div class="DetailsDiv-right-content">
             <div class="detailsFont"><em>Your journey begins here</em></div>
             <p>&nbsp;</p>
-            <h3>Bangkok</h3>
+            <h3>@Model.City.Name</h3>
             <div class="detailsFont">&nbsp;</div>
             <div class="detailsFont">
                 For more than 147 years, travellers have followed the Chao Phraya River

@@ -1,0 +1,500 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ReviewBookingViewModel
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+          crossorigin="anonymous" />
+
+
+
+    <style>
+
+        .room-summary-info {
+            width: 100%;
+            overflow: auto;
+            float: right;
+            max-height: 175px;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        }
+
+
+
+        .selected-day-night-summary {
+            padding-left: 100px;
+            margin: 0rem;
+            overflow: auto;
+        }
+
+
+
+        .selected-rooms-details {
+            padding-left: 100px;
+        }
+
+        .selected-room-detail {
+            margin-bottom: 3px;
+        }
+
+
+
+        .number-of-room {
+            margin-right: 15px;
+        }
+
+
+
+        .hr-tag {
+            width: 350px;
+        }
+
+        .hr-tag1 {
+            width: 90%;
+            margin: auto;
+        }
+
+
+
+        .checkout {
+            padding: 10px auto;
+        }
+
+
+
+
+
+        .check-in-out-details {
+            width: 100%;
+            overflow: auto;
+            margin-right: 0;
+            float: none;
+        }
+
+
+
+        .check-in-details, .check-out-details {
+            width: 20%;
+            padding: 5px 0px 7px 0px;
+        }
+
+
+
+        .check-in-details {
+            float: left;
+            /* font-size: 18px; */
+
+            font-size: 1.125rem;
+            font-family: Calibri;
+            color: #4a4a4a;
+            min-width: 75px;
+        }
+
+
+
+        .date-out-div {
+            border: 1px solid #e7e7e7;
+            text-align: center;
+        }
+
+
+
+        .date-gray-div {
+            background: #f5f5f5;
+            padding: 2px;
+        }
+
+
+
+        .date-lower-div {
+            color: #958f8f;
+            text-align: center;
+            font-size: 11px;
+        }
+
+
+
+        .check-out-details {
+            float: right;
+            /* font-size: 18px; */
+            /* font-size: 1.125rem; */
+
+            font-family: Calibri;
+            color: #4a4a4a;
+            min-width: 75px;
+        }
+
+        .small-text {
+            color: #958f8f;
+            text-align: center;
+            font-size: 11px;
+        }
+
+        .date {
+            color: black;
+            font-size: 20px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+
+        .hotimg {
+            height: 300px;
+            width: 300px;
+            border-radius: 10%;
+        }
+
+
+
+        .summary-charges-heading {
+            font-family: Calibri;
+            margin-top: 30px;
+            font-size: 1.7rem;
+            color: #282727;
+            margin-bottom: 20px;
+        }
+
+        .mb-3 {
+            border: 0px solid #e7e7e7;
+        }
+
+
+
+        .cartTotal-main {
+            background-color: white;
+            display: flex;
+            font-size: 18px;
+            padding: 25px 25px 10px 25px;
+            font-family: Calibri;
+            flex-direction: column;
+        }
+
+        .cartsubheading {
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+
+
+        .subpart-1 {
+            display: flex;
+            padding: 10px 0px 20px 0px;
+            justify-content: space-between;
+        }
+
+        .subpart {
+            display: flex;
+            padding: 20px 0px 0px 0px;
+            justify-content: space-between;
+        }
+
+
+
+        .cartsubheadingPrice {
+            font-size: 22px;
+            font-family: Calibri;
+            font-weight: lighter;
+        }
+
+        .subrooms {
+            font-size: 15px;
+            padding-left: 5px;
+            font-style: italic;
+        }
+
+
+
+        .inclusive {
+            font-size: 17px;
+            padding-top: 20px;
+            color: #afaaaa;
+        }
+
+
+
+        .confrm:hover {
+            width: 10%;
+            background-color: goldenrod;
+            color: #282727;
+            margin-top: 100px;
+            border: 1px solid #282727;
+            margin-right: 550px;
+            float: right;
+        }
+
+        .confrm {
+            width: 10%;
+            background-color: goldenrod;
+            color: #282727;
+            margin-top: 100px;
+            border: 1px solid #282727;
+            margin-right: 550px;
+            float: right;
+        }
+
+    </style>
+
+</head>
+
+<body style="background-color: #f5f5f5;">
+
+    <div>
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Left Half -->
+
+                <div class="col-md-9">
+
+                    <h2 class="summary-charges-heading">Review Your Booking</h2>
+
+                    <div class="hr"></div>
+
+                    <div class="card mb-3" style="max-width: 900px">
+
+                        <div class="row g-0">
+
+                            <div class="col-md-4">
+
+                                <img src="Images/Slideshow/pexels-photo-art.jpeg"
+                                     class="hotimg"
+                                     alt="..." />
+
+                            </div>
+
+                            <div class="col-md-8">
+
+                                <div class="card-body">
+
+                                    <h5 class="card-title" style="padding-left: 40px">
+                                        @Model.Hotel.Name
+                                    </h5>
+
+                                    <p class="card-text">
+
+                                        <small class="text-body-secondary"
+                                               style="padding-left: 40px">@Model.Hotel.Address</small>
+
+                                    </p>
+
+                                    <div class="row checkout"
+                                         style="padding-left: 200px; padding-right: 200px">
+
+                                        <div class="checkout-cont">
+
+                                            <div class="check-in-out-details clearfix desktop">
+
+                                                <div class="check-in-details">
+
+                                                    <div class="date-out-div">
+
+                                                        <div class="date-gray-div">
+
+                                                            <span class="small-text">Check-In</span><span class="date">@Model.Booking.CheckInDate.Day</span>
+
+                                                        </div>
+
+                                                        <div class="date-lower-div">@Model.Booking.CheckInDate.ToString("MMM") 23 | 2pm</div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="check-out-details">
+
+                                                    <div class="date-out-div">
+
+                                                        <div class="date-gray-div">
+
+                                                            <span class="small-text">Check-Out</span><span class="date">@Model.Booking.CheckOutDate.Day</span>
+
+                                                        </div>
+
+                                                        <div class="date-lower-div">@Model.Booking.CheckOutDate.ToString("MMM") 23 | 12pm</div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="room-summary-info">
+
+                                        <div class="selected-day-night-summary">
+
+                                            <span id="day-night-span">@Model.TotalNights</span>
+
+                                            <hr class="hr-tag" />
+
+                                        </div>
+
+                                        <div class="selected-rooms-details">
+                                            @foreach (var item in Model.Booking.BookedList.bookedRooms)
+                                            {
+                                                <div class="selected-room-detail">
+
+                                                    <i class="icon-king-size-bed-not-selected icon-king-size-bed-basic-color inline-block"></i><span class="number-of-room">ROOM 1:</span><span>@item.RoomName</span>
+
+                                                </div>  
+                                            }
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Right Half -->
+
+                <div class="col-md-3">
+
+                    <h2 class="summary-charges-heading">Price Summary</h2>
+
+                    <div class="hr"></div>
+
+
+
+                    <div class="cartTotal-main mb-3 ">
+
+                        <div class="mainprice">
+
+                            <div class="subpart">
+
+
+
+                                <div class="cartsubheading">Price</div>
+
+
+
+                                <div class="cartsubheadingPrice">
+
+                                    <span>Rs</span>25,000
+
+                                </div>
+
+                            </div>
+
+                            <p class="subrooms">( 2 Rooms * 7 Nights)</p>
+
+                        </div>
+
+
+
+                        <div class="subpart-1">
+
+                            <div class="cartsubheading">Price</div>
+
+
+
+                            <div class="cartsubheadingPrice">
+
+                                <span>Rs</span>25,000
+
+                            </div>
+
+                        </div>
+
+
+
+                        <hr class="hr-tag1">
+
+
+
+                        <div class="mainprice">
+
+                            <div class="subpart">
+
+
+
+                                <div class="cartsubheading">Price</div>
+
+
+
+                                <div class="cartsubheadingPrice">
+
+                                    <span>Rs</span>25,000
+
+                                </div>
+
+                            </div>
+
+                            <p class="subrooms">( 2 Rooms * 7 Nights)</p>
+
+                        </div>
+
+
+
+                        <div class="subpart-1">
+
+                            <div class="inclusive">Inclusive of all taxes.</div>
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+            </div>
+
+
+
+            <a asp-action="initiatebooking" class="btn btn-primary confrm">Confirm</a>
+
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+                crossorigin="anonymous"></script>
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
+

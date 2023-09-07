@@ -169,9 +169,17 @@ button:focus[b-g3137w279x] {
         font-weight: 900;
     }
 
-        .navbar-right a:hover[b-amjnqbvfgt] {
-            text-decoration: underline;
-        }
+a[b-amjnqbvfgt] {
+    text-decoration: none;
+    padding: 25px;
+    font-size: 22px;
+    color: #fff;
+    font-family: Arial;
+    font-weight: 900;
+}
+.navbar-right a:hover[b-amjnqbvfgt] {
+    text-decoration: underline;
+}
 
 .navbar-logo[b-amjnqbvfgt] {
     padding-left: 10%;

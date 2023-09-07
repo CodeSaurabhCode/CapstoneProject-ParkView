@@ -22,9 +22,17 @@
         font-weight: 900;
     }
 
-        .navbar-right a:hover {
-            text-decoration: underline;
-        }
+a {
+    text-decoration: none;
+    padding: 25px;
+    font-size: 22px;
+    color: #fff;
+    font-family: Arial;
+    font-weight: 900;
+}
+.navbar-right a:hover {
+    text-decoration: underline;
+}
 
 .navbar-logo {
     padding-left: 10%;

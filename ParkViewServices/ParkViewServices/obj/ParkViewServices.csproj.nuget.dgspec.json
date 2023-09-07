@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ManavBhatia\\OneDrive - Kongsberg Digital AS\\Documents\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj": {}
+    "C:\\Users\\KSHIRSAGARSAURABH\\Downloads\\ParkView\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ManavBhatia\\OneDrive - Kongsberg Digital AS\\Documents\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj": {
+    "C:\\Users\\KSHIRSAGARSAURABH\\Downloads\\ParkView\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ManavBhatia\\OneDrive - Kongsberg Digital AS\\Documents\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj",
+        "projectUniqueName": "C:\\Users\\KSHIRSAGARSAURABH\\Downloads\\ParkView\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj",
         "projectName": "ParkViewServices",
-        "projectPath": "C:\\Users\\ManavBhatia\\OneDrive - Kongsberg Digital AS\\Documents\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj",
-        "packagesPath": "C:\\Users\\ManavBhatia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ManavBhatia\\OneDrive - Kongsberg Digital AS\\Documents\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\obj\\",
+        "projectPath": "C:\\Users\\KSHIRSAGARSAURABH\\Downloads\\ParkView\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\ParkViewServices.csproj",
+        "packagesPath": "C:\\Users\\KSHIRSAGARSAURABH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KSHIRSAGARSAURABH\\Downloads\\ParkView\\CapstoneProject-ParkView\\ParkViewServices\\ParkViewServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ManavBhatia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\KSHIRSAGARSAURABH\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -28,7 +28,8 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kdi.jfrog.io/kdi/api/nuget/nuget": {}
         },
         "frameworks": {
           "net6.0": {
@@ -75,6 +76,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.16, )"
+            },
+            "Razorpay": {
+              "target": "Package",
+              "version": "[3.0.2, )"
             }
           },
           "imports": [
