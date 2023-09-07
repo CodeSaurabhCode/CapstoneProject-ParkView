@@ -107,11 +107,18 @@ namespace ParkViewServices.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
             [Required]
+            [StringLength(50, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 50 characters")]
+            [RegularExpression(@"^[a-zA-Z\s]*$", ErrorMessage = "Name can only contain letters and spaces")]
             public string Name { get; set; }
             public string? StreetAddress { get; set; }
             public string? City { get; set; }
+            
             public string? State { get; set; }
+            [DataType(DataType.PostalCode)]
             public string? PostalCode { get; set; }
+
+            [DataType(DataType.PhoneNumber)]
+            [RegularExpression(@"^\d{10}$", ErrorMessage = "Please enter a valid 10-digit phone number.")]
             public string? PhoneNumber { get; set; }
             
         }
